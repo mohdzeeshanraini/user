@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <form [formGroup]="page1Form">
+    <div class="col-md-4">
+      <label class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="emailaddress">
+      <div *ngIf="submit  &&  g.emailaddress?.errors?.required" class="alert-error">Email Address is
+        required</div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+      <div *ngIf="submit  &&  g.password?.errors?.required" class="alert-error">Password is
+        required</div>
+    </div><br/>
+
+    <div class="mb-3">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+  </div>
+
+  </form>
+
+
+
+</body>
+</html>
